@@ -9,6 +9,12 @@ h1,h2,h3,h4,h5,h6,p{
     margin: 0;
     padding: 0;
 }
+.load-hidden{
+    visibility: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     font-family: "Poppins", serif;
@@ -17,6 +23,7 @@ body{
     background: #FAFAFA;
     max-width: 1440px;
     margin: 0 auto;
+    position: relative;
 }
 p{
     color: hsl(0, 0%, 50%);
@@ -24,13 +31,27 @@ p{
 /*Header*/
 header{
     text-align: center;
-    height: 300px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
 }
-
+.up-btn{
+    display: inline-block;
+    padding: 10px;
+    background-color: #02C8C8;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    visibility: hidden;
+    cursor: pointer;
+    z-index: 99;
+}
+.up-btn>a{
+    text-decoration: none;
+}
 header > *{
     margin-bottom: 10px;
 }
@@ -121,6 +142,9 @@ header .title{
     .description{
         width: 600px;
     }
+    .up-btn{
+        visibility: visible;
+    }
     .cards{
         grid-auto-flow: column;
         grid-template-rows: repeat(4, auto);
@@ -136,4 +160,16 @@ header .title{
         grid-column: 3/5;
         grid-row: span 2;
     }
+}
+/*Scroll Reveal Effect*/
+.reveal{
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1.5s ease;
+    transition-property: transform, opacity;
+}
+
+.active{
+    transform: translateY(0px);
+    opacity: 1;
 }
