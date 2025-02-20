@@ -38,7 +38,6 @@ header{
     align-items:center;
 }
 .up-btn{
-    display: none;
     padding: 10px;
     background-color: #02C8C8;
     border-radius: 5px;
@@ -47,6 +46,7 @@ header{
     right: 50px;
     cursor: pointer;
     z-index: 99;
+    visibility: hidden;
 }
 .up-btn>a{
     text-decoration: none;
@@ -121,6 +121,9 @@ header .title{
     .card{
         grid-column: span 3;
     }
+    .up-btn{
+        visibility: hidden;
+    }
 }
 
 /*Laptop Size*/
@@ -140,6 +143,9 @@ header .title{
     }
     .description{
         width: 600px;
+    }
+    .up-btn{
+        visibility:visible;
     }
     .cards{
         grid-auto-flow: column;
