@@ -61,9 +61,14 @@
       console.log(document.documentElement.scrollTop);
 
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) //this is the key!
+      {
         scrollUpBtn.style.display = "block";
+        document.documentElement.clientWidth>1024 ? scrollUpBtn.style.visibility = "visible" : scrollUpBtn.style.visibility = "hidden";
+      }
       else
+      {
         scrollUpBtn.style.display = "none";
+      }
     };
   </script>
 </body>
